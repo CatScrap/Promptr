@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promptr - Prompt Like a Pro</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #0a1628 0%, #0d1f3c 50%, #0a1628 100%);
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    header {
+      text-align: center;
+      padding: 40px 0;
+    }
+    
+    .logo-image {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 20px;
+      display: block;
+      border-radius: 25px;
+      box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+      transition: transform 0.3s ease;
+    }
+    
+    .logo-image:hover {
+      transform: scale(1.05);
+    }
+    
+    .logo {
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      background: linear-gradient(45deg, #00D4FF, #00B4D8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 2px 10px rgba(0, 212, 255, 0.3);
+    }
+    
+    .tagline {
+      font-size: 20px;
+      color: #8899aa;
+      margin-bottom: 30px;
+    }
+    
+    .features {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+    
+    .feature {
+      background: rgba(13, 31, 60, 0.8);
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      border-left: 4px solid #00D4FF;
+      backdrop-filter: blur(10px);
+    }
+    
+    .feature-icon {
+      font-size: 24px;
+      min-width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #00D4FF, #00B4D8);
+      color: #0a1628;
+      border-radius: 50%;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0, 212, 255, 0.4);
+    }
+    
+    .feature-content h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 20px;
+      color: #00D4FF;
+    }
+    
+    .feature-content p {
+      margin: 0;
+      color: #a0b0c0;
+    }
+    
+    .highlight-section {
+      position: relative;
+      margin: 60px 0;
+      padding: 40px 25px;
+      background: rgba(13, 31, 60, 0.9);
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 212, 255, 0.1);
+      overflow: hidden;
+      border: 2px solid #00D4FF;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300D4FF' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    
+    .dashed-border-top {
+      height: 2px;
+      background-image: linear-gradient(to right, #00D4FF 50%, transparent 50%);
+      background-size: 20px 100%;
+      margin-bottom: 20px;
+    }
+    
+    .dashed-border-bottom {
+      height: 2px;
+      background-image: linear-gradient(to right, #00B4D8 50%, transparent 50%);
+      background-size: 20px 100%;
+      margin-top: 20px;
+    }
+    
+    .highlight-title {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      background: linear-gradient(45deg, #00D4FF, #00B4D8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .highlight-section p {
+      color: #a0b0c0;
+    }
+    
+    .cta {
+      text-align: center;
+      margin: 40px 0;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(45deg, #00D4FF, #00B4D8);
+      color: #0a1628;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 15px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: none;
+    }
+    
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0, 212, 255, 0.5);
+    }
+    
+    .legal-section {
+      background: rgba(13, 31, 60, 0.9);
+      border-radius: 12px;
+      padding: 40px;
+      margin: 60px 0;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(0, 212, 255, 0.2);
+    }
+    
+    .legal-section h2 {
+      color: #00D4FF;
+      font-size: 32px;
+      margin-bottom: 10px;
+      border-bottom: 3px solid #00D4FF;
+      padding-bottom: 10px;
+    }
+    
+    .legal-section h3 {
+      color: #00D4FF;
+      font-size: 24px;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+    
+    .legal-section h4 {
+      color: #00B4D8;
+      font-size: 18px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    
+    .legal-section p {
+      margin-bottom: 15px;
+      color: #c0d0e0;
+    }
+    
+    .legal-section ul {
+      margin-left: 25px;
+      margin-bottom: 15px;
+    }
+    
+    .legal-section li {
+      margin-bottom: 8px;
+      color: #a0b0c0;
+    }
+    
+    .warning-box {
+      background: rgba(255, 193, 7, 0.1);
+      border-left: 4px solid #ffc107;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+    
+    .warning-box p, .warning-box li {
+      color: #ffe082;
+    }
+    
+    .danger-box {
+      background: rgba(220, 53, 69, 0.1);
+      border-left: 4px solid #dc3545;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+    
+    .danger-box p, .danger-box li {
+      color: #f5a0a7;
+    }
+    
+    .info-box {
+      background: rgba(0, 212, 255, 0.1);
+      border-left: 4px solid #00D4FF;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+    
+    .info-box p, .info-box li {
+      color: #80e5ff;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 30px 0;
+      color: #00D4FF;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    
+    .floating {
+      position: absolute;
+      animation: floating 3s ease-in-out infinite, swaying 5s ease-in-out infinite;
+      opacity: 0.8;
+      font-size: 24px;
+      z-index: 1;
+      filter: drop-shadow(0 2px 5px rgba(0, 212, 255, 0.5));
+    }
+    
+    @keyframes floating {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    @keyframes swaying {
+      0% { margin-left: 0px; }
+      50% { margin-left: 15px; }
+      100% { margin-left: 0px; }
+    }
+    
+    #emoji1 { top: 30%; left: 15%; animation-delay: 0s; }
+    #emoji2 { top: 50%; left: 30%; animation-delay: 0.5s; }
+    #emoji3 { top: 40%; left: 50%; animation-delay: 1s; }
+    #emoji4 { top: 30%; left: 70%; animation-delay: 1.5s; }
+    #emoji5 { top: 50%; left: 85%; animation-delay: 2s; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="promptrimage.png" alt="Promptr Logo" class="logo-image">
+      <div class="logo">Promptr</div>
+      <p class="tagline">Prompt Like a Pro</p>
+    </header>
+    
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">✨</div>
+        <div class="feature-content">
+          <h3>Craft Perfect Prompts</h3>
+          <p>Create, save, and organize powerful AI prompts that deliver consistent, high-quality results every time.</p>
+        </div>
+      </div>
+      
+      <div class="feature">
+        <div class="feature-icon">🌐</div>
+        <div class="feature-content">
+          <h3>Discover & Share</h3>
+          <p>Browse a community-driven library of prompts shared by users worldwide and share your own creations.</p>
+        </div>
+      </div>
+      
+      <div class="feature">
+        <div class="feature-icon">🚀</div>
+        <div class="feature-content">
+          <h3>Boost Your Productivity</h3>
+          <p>Access your prompt library instantly and supercharge your AI workflows with battle-tested templates.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="highlight-section">
+      <div class="dashed-border-top"></div>
+      <div class="floating" id="emoji1">💡</div>
+      <div class="floating" id="emoji2">🎯</div>
+      <div class="floating" id="emoji3">⚡</div>
+      <div class="floating" id="emoji4">🧠</div>
+      <div class="floating" id="emoji5">✏️</div>
+      
+      <h2 class="highlight-title">Your Prompt Library, Elevated</h2>
+      <p>Transform the way you interact with AI. Build, browse, and share prompts with a community of power users—all from one beautifully designed app.</p>
+      <div class="dashed-border-bottom"></div>
+    </div>
+    
+    <div class="cta">
+      <a href="https://github.com/CatScrap/Promptr" class="cta-button">Explore Promptr</a>
+    </div>
+
+    <div class="legal-section" id="privacy">
+      <h2>Privacy Policy</h2>
+      <p><em>Last Updated: December 2, 2025</em></p>
+
+      <h3>1. Introduction</h3>
+      <p>CatScrap ("we," "us," or "our") operates the Promptr mobile application (the "App"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our App.</p>
+      <p>By using Promptr, you agree to the collection and use of information in accordance with this policy.</p>
+
+      <h3>2. Information We Collect</h3>
+      
+      <h4>2.1 Apple Sign-In Information</h4>
+      <p>When you sign in with Apple, we collect:</p>
+      <ul>
+        <li>Unique Apple User ID (required)</li>
+        <li>Email address (if you choose to share it)</li>
+        <li>Full name (if you choose to share it)</li>
+      </ul>
+
+      <h4>2.2 Prompt Creation Data</h4>
+      <p>We store:</p>
+      <ul>
+        <li>Prompts you create and save</li>
+        <li>Prompt titles, descriptions, tags, and categories</li>
+        <li>Prompt creation and modification timestamps</li>
+        <li>Version history of your prompts</li>
+        <li>Prompts you share publicly or with the community</li>
+      </ul>
+
+      <h4>2.3 Usage Data</h4>
+      <p>We automatically collect:</p>
+      <ul>
+        <li>Device type and operating system version</li>
+        <li>App usage statistics (features used, errors encountered)</li>
+        <li>Firebase Analytics data (crashes, performance metrics)</li>
+        <li>Browsing activity within the community prompt library</li>
+      </ul>
+
+      <h4>2.4 Subscription & Payment Data</h4>
+      <p>If you subscribe to Premium or make in-app purchases:</p>
+      <ul>
+        <li>Subscription status and expiration date</li>
+        <li>Credit balance for premium features</li>
+        <li>Purchase history (processed by Apple, not stored by us)</li>
+      </ul>
+
+      <h3>3. Why We Collect This Data</h3>
+      
+      <h4>3.1 Legal Accountability</h4>
+      <div class="warning-box">
+        <p><strong>Important:</strong> We require authentication because users create and share content publicly. Linking prompts to verified Apple IDs protects our service and users from:</p>
+        <ul>
+          <li>Spam and low-quality content</li>
+          <li>Harmful or offensive material</li>
+          <li>Copyright infringement</li>
+          <li>Impersonation and fraud</li>
+        </ul>
+      </div>
+
+      <h4>3.2 Service Functionality</h4>
+      <ul>
+        <li>Sync your prompts across devices</li>
+        <li>Maintain your subscription and credit balance</li>
+        <li>Enable community sharing and discovery features</li>
+        <li>Provide personalized recommendations</li>
+      </ul>
+
+      <h3>4. How We Store Your Data</h3>
+      <p>Your data is stored on Google Firebase servers:</p>
+      <ul>
+        <li>Location: United States (us-central1)</li>
+        <li>Encryption: At rest and in transit</li>
+        <li>Retention: Until you delete your account</li>
+      </ul>
+
+      <h3>5. Data Sharing</h3>
+      <p><strong>We do NOT sell, rent, or share your personal data with third parties</strong>, except:</p>
+      <ul>
+        <li>Google Firebase (cloud hosting)</li>
+        <li>Apple App Store (payment processing)</li>
+        <li>When required by law or court order</li>
+        <li>Publicly shared prompts are visible to other users</li>
+      </ul>
+
+      <h3>6. Your Rights</h3>
+      
+      <h4>6.1 Access Your Data</h4>
+      <p>Contact us to request a copy of your data.</p>
+
+      <h4>6.2 Delete Your Account</h4>
+      <div class="info-box">
+        <p><strong>Go to: Settings → Account Management → Delete Account</strong></p>
+        <p>This permanently deletes:</p>
+        <ul>
+          <li>Your user profile</li>
+          <li>All prompts you've created</li>
+          <li>Credit balance and subscription history</li>
+          <li><strong>Cannot be undone</strong></li>
+        </ul>
+      </div>
+
+      <h4>6.3 Export Your Prompts</h4>
+      <p>Use the Export feature to save your prompts before deleting your account.</p>
+
+      <h3>7. Security</h3>
+      <p>We implement industry-standard security measures:</p>
+      <ul>
+        <li>Encrypted data transmission (HTTPS/TLS)</li>
+        <li>Encrypted storage (Firebase encryption)</li>
+        <li>Authentication-required API access</li>
+        <li>Regular security audits</li>
+      </ul>
+
+      <h3>8. Contact Us</h3>
+      <p>For privacy questions or to exercise your rights:</p>
+      <p><strong>Email:</strong> support@catscrap.com<br>
+      <strong>Developer:</strong> CatScrap</p>
+    </div>
+
+    <div class="legal-section" id="terms">
+      <h2>Terms of Service</h2>
+      <p><em>Last Updated: December 2, 2025</em></p>
+
+      <div class="warning-box">
+        <p><strong>PLEASE READ THESE TERMS CAREFULLY BEFORE USING PROMPTR.</strong></p>
+        <p>By downloading, installing, or using Promptr, you agree to be bound by these Terms of Service. If you do not agree, do not use the App.</p>
+      </div>
+
+      <h3>1. Acceptance of Terms</h3>
+      <p>These Terms constitute a legal agreement between you and CatScrap. By using Promptr, you represent that:</p>
+      <ul>
+        <li>You are at least 13 years of age</li>
+        <li>You have the legal capacity to enter into this agreement</li>
+        <li>You will comply with all applicable laws</li>
+      </ul>
+
+      <h3>2. Account Requirements</h3>
+      
+      <h4>2.1 Mandatory Sign-In</h4>
+      <div class="warning-box">
+        <p><strong>Promptr requires Apple Sign-In for all users.</strong> This is necessary for:</p>
+        <ul>
+          <li><strong>Legal accountability:</strong> Users create and share public content that must be moderated</li>
+          <li><strong>Community safety:</strong> Verified accounts prevent spam and abuse</li>
+          <li><strong>Content ownership:</strong> Proper attribution of shared prompts</li>
+        </ul>
+      </div>
+
+      <h3>3. User Code of Conduct</h3>
+
+      <h4>3.1 Prohibited Content</h4>
+      <div class="danger-box">
+        <p><strong>❌ You may NOT create or share prompts that contain:</strong></p>
+        <ul>
+          <li>Harmful content (hate speech, violence, harassment)</li>
+          <li>Illegal content (copyright infringement, fraud schemes)</li>
+          <li>Adult or explicit material</li>
+          <li>Spam, scams, or misleading information</li>
+          <li>Content designed to circumvent AI safety measures</li>
+        </ul>
+      </div>
+
+      <h3>4. Intellectual Property</h3>
+      <p><strong>You retain all ownership rights to prompts you create.</strong> By sharing prompts publicly, you grant other users a license to use and adapt them. By using Promptr, you grant us a limited license to store and display your content.</p>
+
+      <h3>5. Premium Subscriptions & In-App Purchases</h3>
+      <p><strong>Free Tier:</strong> Limited prompt storage, browse community prompts, ads shown</p>
+      <p><strong>Premium Tier ($4.99/month or $49.99/year):</strong> Unlimited prompts, no ads, advanced organization features, priority support</p>
+      <p><strong>Credit Packs (In-App Purchase):</strong> Purchase additional credits for premium features</p>
+
+      <h3>6. Account Deletion and Forfeitures</h3>
+      <div class="danger-box">
+        <p><strong>⚠️ IMPORTANT: Deleting your account results in immediate and permanent forfeiture of:</strong></p>
+        <ul>
+          <li><strong>All Premium subscription benefits</strong> (no refunds for remaining time)</li>
+          <li><strong>All purchased credits</strong> (no refunds)</li>
+          <li><strong>All prompts and data</strong> (cannot be recovered)</li>
+          <li><strong>Publicly shared prompts</strong> (will be removed from community)</li>
+        </ul>
+        <p><strong>Before deleting:</strong> Cancel subscription, export prompts, use remaining credits.</p>
+      </div>
+
+      <h3>7. Limitation of Liability</h3>
+      <p>PROMPTR IS PROVIDED "AS IS" WITHOUT WARRANTIES. CatScrap SHALL NOT BE LIABLE FOR LOSS OF DATA, SERVICE INTERRUPTIONS, OR ANY DAMAGES ARISING FROM YOUR USE OF THE APP OR USER-GENERATED CONTENT.</p>
+
+      <h3>8. Contact Us</h3>
+      <p>Questions about these Terms:</p>
+      <p><strong>Email:</strong> support@catscrap.com<br>
+      <strong>Developer:</strong> CatScrap</p>
+    </div>
+    
+    <footer>
+      Apps by CatScrap
+    </footer>
+  </div>
+</body>
+</html>
