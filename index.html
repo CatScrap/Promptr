@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Promptr - Prompt Like a Pro</title>
+  <title>Prompt Jockey - Master Your Prompts</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #0a1628 0%, #0d1f3c 50%, #0a1628 100%);
+      background: linear-gradient(135deg, #0F0F1A 0%, #1a0a0c 50%, #0F0F1A 100%);
       color: #e0e0e0;
       line-height: 1.6;
     }
@@ -31,7 +31,7 @@
       margin: 0 auto 20px;
       display: block;
       border-radius: 25px;
-      box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+      box-shadow: 0 10px 30px rgba(255, 77, 89, 0.3);
       transition: transform 0.3s ease;
     }
     
@@ -43,15 +43,15 @@
       font-size: 48px;
       font-weight: bold;
       margin-bottom: 10px;
-      background: linear-gradient(45deg, #00D4FF, #00B4D8);
+      background: linear-gradient(45deg, #FF4D59, #D93340);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 2px 10px rgba(0, 212, 255, 0.3);
+      text-shadow: 0 2px 10px rgba(255, 77, 89, 0.3);
     }
     
     .tagline {
       font-size: 20px;
-      color: #8899aa;
+      color: #aa8899;
       margin-bottom: 30px;
     }
     
@@ -63,14 +63,14 @@
     }
     
     .feature {
-      background: rgba(13, 31, 60, 0.8);
+      background: rgba(26, 10, 12, 0.8);
       border-radius: 10px;
       padding: 25px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
       display: flex;
       align-items: flex-start;
       gap: 15px;
-      border-left: 4px solid #00D4FF;
+      border-left: 4px solid #FF4D59;
       backdrop-filter: blur(10px);
     }
     
@@ -81,48 +81,48 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, #00D4FF, #00B4D8);
-      color: #0a1628;
+      background: linear-gradient(135deg, #FF4D59, #D93340);
+      color: #0F0F1A;
       border-radius: 50%;
       text-align: center;
-      box-shadow: 0 2px 10px rgba(0, 212, 255, 0.4);
+      box-shadow: 0 2px 10px rgba(255, 77, 89, 0.4);
     }
     
     .feature-content h3 {
       margin-top: 0;
       margin-bottom: 8px;
       font-size: 20px;
-      color: #00D4FF;
+      color: #FF4D59;
     }
     
     .feature-content p {
       margin: 0;
-      color: #a0b0c0;
+      color: #c0a0b0;
     }
     
     .highlight-section {
       position: relative;
       margin: 60px 0;
       padding: 40px 25px;
-      background: rgba(13, 31, 60, 0.9);
+      background: rgba(26, 10, 12, 0.9);
       border-radius: 12px;
       text-align: center;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 212, 255, 0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 40px rgba(255, 77, 89, 0.1);
       overflow: hidden;
-      border: 2px solid #00D4FF;
-      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300D4FF' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      border: 2px solid #FF4D59;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FF4D59' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }
     
     .dashed-border-top {
       height: 2px;
-      background-image: linear-gradient(to right, #00D4FF 50%, transparent 50%);
+      background-image: linear-gradient(to right, #FF4D59 50%, transparent 50%);
       background-size: 20px 100%;
       margin-bottom: 20px;
     }
     
     .dashed-border-bottom {
       height: 2px;
-      background-image: linear-gradient(to right, #00B4D8 50%, transparent 50%);
+      background-image: linear-gradient(to right, #D93340 50%, transparent 50%);
       background-size: 20px 100%;
       margin-top: 20px;
     }
@@ -131,13 +131,13 @@
       font-size: 28px;
       font-weight: bold;
       margin-bottom: 15px;
-      background: linear-gradient(45deg, #00D4FF, #00B4D8);
+      background: linear-gradient(45deg, #FF4D59, #D93340);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
     
     .highlight-section p {
-      color: #a0b0c0;
+      color: #c0a0b0;
     }
     
     .cta {
@@ -147,49 +147,49 @@
     
     .cta-button {
       display: inline-block;
-      background: linear-gradient(45deg, #00D4FF, #00B4D8);
-      color: #0a1628;
+      background: linear-gradient(45deg, #FF4D59, #D93340);
+      color: #0F0F1A;
       font-size: 18px;
       font-weight: bold;
       padding: 15px 30px;
       border-radius: 8px;
       text-decoration: none;
-      box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+      box-shadow: 0 4px 15px rgba(255, 77, 89, 0.4);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       border: none;
     }
     
     .cta-button:hover {
       transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(0, 212, 255, 0.5);
+      box-shadow: 0 10px 25px rgba(255, 77, 89, 0.5);
     }
     
     .legal-section {
-      background: rgba(13, 31, 60, 0.9);
+      background: rgba(26, 10, 12, 0.9);
       border-radius: 12px;
       padding: 40px;
       margin: 60px 0;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(0, 212, 255, 0.2);
+      border: 1px solid rgba(255, 77, 89, 0.2);
     }
     
     .legal-section h2 {
-      color: #00D4FF;
+      color: #FF4D59;
       font-size: 32px;
       margin-bottom: 10px;
-      border-bottom: 3px solid #00D4FF;
+      border-bottom: 3px solid #FF4D59;
       padding-bottom: 10px;
     }
     
     .legal-section h3 {
-      color: #00D4FF;
+      color: #FF4D59;
       font-size: 24px;
       margin-top: 30px;
       margin-bottom: 15px;
     }
     
     .legal-section h4 {
-      color: #00B4D8;
+      color: #D93340;
       font-size: 18px;
       margin-top: 20px;
       margin-bottom: 10px;
@@ -197,7 +197,7 @@
     
     .legal-section p {
       margin-bottom: 15px;
-      color: #c0d0e0;
+      color: #d0c0c5;
     }
     
     .legal-section ul {
@@ -207,7 +207,7 @@
     
     .legal-section li {
       margin-bottom: 8px;
-      color: #a0b0c0;
+      color: #b0a0a5;
     }
     
     .warning-box {
@@ -235,21 +235,21 @@
     }
     
     .info-box {
-      background: rgba(0, 212, 255, 0.1);
-      border-left: 4px solid #00D4FF;
+      background: rgba(255, 77, 89, 0.1);
+      border-left: 4px solid #FF4D59;
       padding: 15px;
       margin: 20px 0;
       border-radius: 4px;
     }
     
     .info-box p, .info-box li {
-      color: #80e5ff;
+      color: #ffb0b5;
     }
     
     footer {
       text-align: center;
       padding: 30px 0;
-      color: #00D4FF;
+      color: #FF4D59;
       font-size: 14px;
       font-weight: bold;
       letter-spacing: 1px;
@@ -262,7 +262,7 @@
       opacity: 0.8;
       font-size: 24px;
       z-index: 1;
-      filter: drop-shadow(0 2px 5px rgba(0, 212, 255, 0.5));
+      filter: drop-shadow(0 2px 5px rgba(255, 77, 89, 0.5));
     }
     
     @keyframes floating {
@@ -287,9 +287,9 @@
 <body>
   <div class="container">
     <header>
-      <img src="promptrimage.png" alt="Promptr Logo" class="logo-image">
-      <div class="logo">Promptr</div>
-      <p class="tagline">Prompt Like a Pro</p>
+      <img src="pj1.png" alt="Prompt Jockey Logo" class="logo-image">
+      <div class="logo">Prompt Jockey</div>
+      <p class="tagline">Master Your Prompts</p>
     </header>
     
     <div class="features">
@@ -332,7 +332,7 @@
     </div>
     
     <div class="cta">
-      <a href="https://github.com/CatScrap/Promptr" class="cta-button">Explore Promptr</a>
+      <a href="https://github.com/CatScrap/PromptJockey" class="cta-button">Explore Prompt Jockey</a>
     </div>
 
     <div class="legal-section" id="privacy">
@@ -340,8 +340,8 @@
       <p><em>Last Updated: December 2, 2025</em></p>
 
       <h3>1. Introduction</h3>
-      <p>CatScrap ("we," "us," or "our") operates the Promptr mobile application (the "App"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our App.</p>
-      <p>By using Promptr, you agree to the collection and use of information in accordance with this policy.</p>
+      <p>CatScrap ("we," "us," or "our") operates the Prompt Jockey mobile application (the "App"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our App.</p>
+      <p>By using Prompt Jockey, you agree to the collection and use of information in accordance with this policy.</p>
 
       <h3>2. Information We Collect</h3>
       
@@ -458,12 +458,12 @@
       <p><em>Last Updated: December 2, 2025</em></p>
 
       <div class="warning-box">
-        <p><strong>PLEASE READ THESE TERMS CAREFULLY BEFORE USING PROMPTR.</strong></p>
-        <p>By downloading, installing, or using Promptr, you agree to be bound by these Terms of Service. If you do not agree, do not use the App.</p>
+        <p><strong>PLEASE READ THESE TERMS CAREFULLY BEFORE USING PROMPT JOCKEY.</strong></p>
+        <p>By downloading, installing, or using Prompt Jockey, you agree to be bound by these Terms of Service. If you do not agree, do not use the App.</p>
       </div>
 
       <h3>1. Acceptance of Terms</h3>
-      <p>These Terms constitute a legal agreement between you and CatScrap. By using Promptr, you represent that:</p>
+      <p>These Terms constitute a legal agreement between you and CatScrap. By using Prompt Jockey, you represent that:</p>
       <ul>
         <li>You are at least 13 years of age</li>
         <li>You have the legal capacity to enter into this agreement</li>
@@ -474,7 +474,7 @@
       
       <h4>2.1 Mandatory Sign-In</h4>
       <div class="warning-box">
-        <p><strong>Promptr requires Apple Sign-In for all users.</strong> This is necessary for:</p>
+        <p><strong>Prompt Jockey requires Apple Sign-In for all users.</strong> This is necessary for:</p>
         <ul>
           <li><strong>Legal accountability:</strong> Users create and share public content that must be moderated</li>
           <li><strong>Community safety:</strong> Verified accounts prevent spam and abuse</li>
@@ -497,7 +497,7 @@
       </div>
 
       <h3>4. Intellectual Property</h3>
-      <p><strong>You retain all ownership rights to prompts you create.</strong> By sharing prompts publicly, you grant other users a license to use and adapt them. By using Promptr, you grant us a limited license to store and display your content.</p>
+      <p><strong>You retain all ownership rights to prompts you create.</strong> By sharing prompts publicly, you grant other users a license to use and adapt them. By using Prompt Jockey, you grant us a limited license to store and display your content.</p>
 
       <h3>5. Premium Subscriptions & In-App Purchases</h3>
       <p><strong>Free Tier:</strong> Limited prompt storage, browse community prompts, ads shown</p>
@@ -517,7 +517,7 @@
       </div>
 
       <h3>7. Limitation of Liability</h3>
-      <p>PROMPTR IS PROVIDED "AS IS" WITHOUT WARRANTIES. CatScrap SHALL NOT BE LIABLE FOR LOSS OF DATA, SERVICE INTERRUPTIONS, OR ANY DAMAGES ARISING FROM YOUR USE OF THE APP OR USER-GENERATED CONTENT.</p>
+      <p>PROMPT JOCKEY IS PROVIDED "AS IS" WITHOUT WARRANTIES. CatScrap SHALL NOT BE LIABLE FOR LOSS OF DATA, SERVICE INTERRUPTIONS, OR ANY DAMAGES ARISING FROM YOUR USE OF THE APP OR USER-GENERATED CONTENT.</p>
 
       <h3>8. Contact Us</h3>
       <p>Questions about these Terms:</p>
